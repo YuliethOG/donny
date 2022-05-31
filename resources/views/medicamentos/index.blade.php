@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" >
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 @section('content')
 <style>
 
@@ -58,15 +58,10 @@
 								                <td>{{ $Medicamento->nombrecat}}</td>
 								            
                                              
-                                                <td class="td-actions text-right">
-                                            
-                                                
-                                               </td>
+                                          
                                                <td class="td-actions text-right">
-                                               @can('medicamento_editar')
                                                  <a href="{{ route('medicamentos.edit', $Medicamento->id) }}"
                                                     class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                @endcan
                                                </td>
 
                                             </tr>

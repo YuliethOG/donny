@@ -41,16 +41,16 @@ class MedicamentoController extends Controller
 
 
 
-    public function edit(medicamento $medicamento)
+    public function edit(medicamentos $medicamentos)
     {
-        abort_if(Gate::denies('medicamento_editar'),403);
+       
         $categorias = Categorias::all();
-        return view('medicamentos.edit', compact('medicamento','categorias'));
+        return view('medicamentos.edit', compact('medicamentos','categorias'));
     }
-    public function update(medicamentosEditRequest $request,medicamento $medicamento)
+    public function update(medicamentosEditRequest $request,medicamentos $medicamentos)
     {
         $datos = $request->all();
-        $producto->update($datos);
+        $medicamentos->update($datos);
         return redirect()->route('medicamentos.index')->with('success', 'Medicamento actualizado correctamente');
 
     }

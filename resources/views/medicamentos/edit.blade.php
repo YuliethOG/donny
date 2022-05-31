@@ -1,89 +1,53 @@
-@extends('adminlte::page'['activePage' => 'productos', 'titlePage' => 'Editar Producto'])
+@extends('adminlte::page')
 @section('content')
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{route('medicamentos.update', $medicamento->id)}}" method="post" class="form-horizontal">
+                <form action="{{route('medicamentos.update', $medicamentos->id)}}" method="post" class="form-horizontal">
                     @csrf
                     @method('PUT')
                     <div class="card">
                         <div class="card-header card-header-info">
-                            <h4 class="card-title text-dark" style="font-weight: 900; font-size:24px">Productos</h4>
+                            <h4 class="card-title text-dark" style="font-weight: 900; font-size:24px">medicamentos</h4>
                             <p class="card-category text-dark" style="font-size:17px">Editar datos</p>
                         </div>
-                            <div class="card-body">
-                                {{-- <div class="row">
-                                <label for="Código" class="col-sm-2 col-form-label control-label asterisco">Código</label>
-                                    <div class="col-sm-7">
-                                    <input type="number" class="form-control" name="Código" placeholder="Ingrese su Código" value="{{old('Código',$producto-> Código)}}" autofocus>
-                                    @if ($errors->has('Código'))
-                                    <span class="error text-danger" for="input-Código">{{ $errors->first('Código') }}</span>
-                                    @endif
-                                </div>
-                            </div> --}}
+                        
                             <div class="row">
                                 <label for="Nombre" class="col-sm-2 col-form-label control-label asterisco">Nombre</label>
                                 <div class="col-sm-7">
-                                <input type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" value="{{old('Nombre',$producto-> Nombre)}}">
+                                <input type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" value="{{old('Nombre',$medicamentos-> Nombre)}}">
                                 @if ($errors->has('Nombre'))
                                 <span class="error text-danger" for="input-Nombre">{{ $errors->first('Nombre') }}</span>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
-                            <label for="Categorías" class="col-sm-2 col-form-label control-label asterisco">Categorías</label>
+                            <label for="Categorias" class="col-sm-2 col-form-label control-label asterisco">Categorías</label>
                             <div class="col-sm-7">
-                                <select class="form-control js-example-basic-single" name="Categorías" id="Categorías">
-                                   <option  value="{{old('Categorías',$medicamento->Categorías)}}">Seleccione solo para modificar</option>
+                                <select class="form-control js-example-basic-single" name="Categorias" id="Categorias">
+                                   <option  value="{{old('Categorias',$medicamentos->Categorias)}}">Seleccione solo para modificar</option>
                                     @foreach ( $categorias as $row )
-                                        @if ($row->estado==0)
-                                            @continue
-                                        @endif
+                                       
 
-                                        <option @if ($row->id==$medicamento->Categorías)
+                                        <option @if ($row->id==$medicamentos->Categorias)
                                             selected="true"
                                         @endif
 
                                          value="{{$row->id}}">{{$row->nombre}}</option>
                                     @endforeach
                                 </select>
-                                @if ($errors->has('Categorías'))
-                                <span class="error text-danger" for="input-Categorías">{{ $errors->first('Categorías') }}</span>
+                                @if ($errors->has('Categorias'))
+                                <span class="error text-danger" for="input-Categorias">{{ $errors->first('Categorias') }}</span>
                                 @endif
-                            {{-- <input type="select" class="form-control" name="Categorías" placeholder="Ingrese su Categorías" value="{{old('Categorías',$categorias, $producto-> Categorías)}}"> --}}
-
+                            
                         </div>
                     </div>
                     
-        <div class="row">
-            <label for="email" class="col-sm-2 col-form-label">Estado</label>
-            <div class="col-sm-7">
-                <select class="form-control" name="estado" id="estado">
-
-                        @if($producto->estado==1)
-
-
-                    <option value="1">Activo</option>
-                    <option value="0">Inactivo</option>
-
-                        @else
-
-                    <option value="0">Inactivo</option>
-                    <option value="1">Activo</option>
-
-                    @endif
-                {{-- </option>
-                    <option value="0">Inactivo</<option>
-                    <option value="1">Activo</option>
-                 --}}
-                </select>
-          </div>
-        </div>
     <div class="card-footer ml-auto mr-auto col-md-4">
         <button type="submit" class="btn btn-facebook">Actualizar</button>
         <div class="">
-        <a href="{{route('productos.index')}}" class="btn btn-danger">Cancelar</a>
+        <a href="{{route('medicamentos.index')}}" class="btn btn-danger">Cancelar</a>
     </div>
     </div>
 

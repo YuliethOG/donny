@@ -55,7 +55,7 @@
                                 <div class="field is-horizontal">
                                         <label for="hora" class="is-size-3">Hora:</label>
                                         <div class="field-body mx-4 mt-2">
-                                        <input type="text" class="column is-one-quarter input is-info" id="hora" name="hora" placeholder="Ingrese su precio" >
+                                        <input type="text" class="column is-one-quarter input is-info" id="hora" name="hora" placeholder="Ingrese su hora" >
                                        
                                     </div>
                                  </div>
@@ -97,7 +97,7 @@
 </div>
 
 @endsection
-@section('script')
+@section('js')
 <script>
 
 
@@ -112,7 +112,9 @@
                     <td>
                         <input type="hidden" name="medicamento_id[]" value="${medicamento_id}" />
                                 <input type="hidden" name="cantidades[]" value="${cantidad}" />
+                                <input type="hidden" name="horas[]" value="${hora}" />
                         ${medicamento_text}
+
 
                     </td>
                     <td >${cantidad}</td>

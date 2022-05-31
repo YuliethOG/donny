@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
-use App\Http\Requests\MedicamentoCreateRequest;
-use App\Http\Requests\MedicamentoEditRequest;
+use App\Http\Requests\MedicamentosCreateRequest;
+use App\Http\Requests\MedicamentosEditRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
