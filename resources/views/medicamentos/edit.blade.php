@@ -46,8 +46,6 @@
                                 @if ($errors->has('Categorías'))
                                 <span class="error text-danger" for="input-Categorías">{{ $errors->first('Categorías') }}</span>
                                 @endif
-                            {{-- <input type="select" class="form-control" name="Categorías" placeholder="Ingrese su Categorías" value="{{old('Categorías',$categorias, $producto-> Categorías)}}"> --}}
-
                         </div>
                     </div>
 
