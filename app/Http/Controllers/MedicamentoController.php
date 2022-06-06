@@ -15,13 +15,13 @@ class MedicamentoController extends Controller
 {
     public function index(Request $request)
     {
-    
+
         $medicamentos = DB::select("SELECT medicamentos.id, medicamentos.Nombre, categorias.nombre  as nombrecat FROM medicamentos INNER JOIN categorias ON Categorias = categorias.id");
         $Categorias = Categorias::all();
         return view('medicamentos.index', compact('medicamentos','Categorias'));
     }
 
-   
+
 
     public function create()
     {
@@ -43,7 +43,7 @@ class MedicamentoController extends Controller
 
     public function edit(medicamento $medicamento)
     {
-        abort_if(Gate::denies('medicamento_editar'),403);
+
         $categorias = Categorias::all();
         return view('medicamentos.edit', compact('medicamento','categorias'));
     }

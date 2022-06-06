@@ -34,10 +34,7 @@
                                 <div class="field is-horizontal">
                                         <label for="cantidad" class=" is-size-3">Cantidad:</label>
                                         <div class=" field-body">
-
                                         <input type="number" class="column is-one-quarter input is-info mx-4 mt-2" id="cantidad" name="cantidad" placeholder="Ingrese su cantidad" >
-                                        
-
                                     </div>
                                 </div>
                                 <div class="field">
@@ -49,18 +46,19 @@
                                             <option value="{{$row->id}}">{{$row->Nombre}}</option>
                                             @endforeach
                                         </select>
-                                       
+
                                 </div>
                                 </div>
                                 <div class="field is-horizontal">
                                         <label for="hora" class="is-size-3">Hora:</label>
                                         <div class="field-body mx-4 mt-2">
                                         <input type="text" class="column is-one-quarter input is-info" id="hora" name="hora" placeholder="Ingrese su precio" >
-                                       
+
                                     </div>
                                  </div>
                                     <div>
-                                        <button onclick="agregar()" class="button is-success"  type="button" >Agregar Producto</button>
+                                        <button onClick="agregar()" type="button" >Agregar Producto</button>
+
                                     </div>
                             </div>
                           <br>
@@ -97,11 +95,13 @@
 </div>
 
 @endsection
-@section('script')
+@section('js')
 <script>
 
 
+
     function agregar(){
+
         let medicamento_id = $("#medicamento option:selected").val();
         let medicamento_text = $("#medicamento option:selected").text();
         let cantidad = $("#cantidad").val();
@@ -138,7 +138,7 @@
     function eliminar_medicamento(id){
         $("#tr-"+id).remove("");
 
-       
+
     }
 </script>
 @endsection

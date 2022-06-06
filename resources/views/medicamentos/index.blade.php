@@ -44,8 +44,8 @@
                                             <th>Código</th>
                                             <th>Nombre</th>
                                             <th>Categorías</th>
-                                            
-                                         
+
+
                                             <th class="text-right">Funciones</th>
                                         </thead>
                                         <tbody>
@@ -56,11 +56,11 @@
                                                 <td>{{ $Medicamento->id}}</td>
                                                 <td>{{ $Medicamento->Nombre }}</td>
 								                <td>{{ $Medicamento->nombrecat}}</td>
-								            
-                                             
+
+
                                                 <td class="td-actions text-right">
-                                            
-                                                
+
+
                                                </td>
                                                <td class="td-actions text-right">
                                                @can('medicamento_editar')
@@ -94,8 +94,6 @@
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-    } )
-    } );
 
     </script>
     @endsection
