@@ -41,9 +41,9 @@ class MedicamentoController extends Controller
 
 
 
+
     public function edit(medicamentos $medicamento)
     {
-
         $categorias = Categorias::all();
         return view('medicamentos.edit', compact('medicamento','categorias'));
     }

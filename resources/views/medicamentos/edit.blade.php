@@ -37,7 +37,10 @@
                                 <select class="form-control js-example-basic-single" name="Categorías" id="Categorías">
                                    <option >Seleccione solo para modificar</option>
                                     @foreach ( $categorias as $row )
-                                        <option value="{{$row->id}}">{{$row->nombre}}</option>
+                                        <option @if ($row->id==$medicamento->estado)
+                                            selected="true"
+                                        @endif
+                                        value="{{$row->id}}">{{$row->nombre}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('Categorías'))
@@ -49,29 +52,9 @@
                     </div>
 
         <div class="row">
-            <label for="email" class="col-sm-2 col-form-label">Estado</label>
-            <div class="col-sm-7">
-                <select class="form-control" name="estado" id="estado">
-
-                        @if($medicamento->estado==1)
 
 
-                    <option value="1">Activo</option>
-                    <option value="0">Inactivo</option>
 
-                        @else
-
-                    <option value="0">Inactivo</option>
-                    <option value="1">Activo</option>
-
-                    @endif
-                {{-- </option>
-                    <option value="0">Inactivo</<option>
-                    <option value="1">Activo</option>
-                 --}}
-                </select>
-          </div>
-        </div>
     <div class="card-footer ml-auto mr-auto col-md-4">
         <button type="submit" class="btn btn-facebook">Actualizar</button>
         <div class="">
