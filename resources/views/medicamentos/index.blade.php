@@ -63,10 +63,10 @@
 
                                                </td>
                                                <td class="td-actions text-right">
-                                               @can('medicamento_editar')
+
                                                  <a href="{{ route('medicamentos.edit', $Medicamento->id) }}"
                                                     class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                @endcan
+                                             
                                                </td>
 
                                             </tr>

@@ -1,4 +1,4 @@
-@extends('adminlte::page'['activePage' => 'productos', 'titlePage' => 'Editar Producto'])
+@extends('adminlte::page')
 @section('content')
 <div class="content">
     <div class="container-fluid">
@@ -25,7 +25,7 @@
                             <div class="row">
                                 <label for="Nombre" class="col-sm-2 col-form-label control-label asterisco">Nombre</label>
                                 <div class="col-sm-7">
-                                <input type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" value="{{old('Nombre',$producto-> Nombre)}}">
+                                <input type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" value="{{old('Nombre',$medicamento-> Nombre)}}">
                                 @if ($errors->has('Nombre'))
                                 <span class="error text-danger" for="input-Nombre">{{ $errors->first('Nombre') }}</span>
                                 @endif
@@ -35,17 +35,9 @@
                             <label for="Categorías" class="col-sm-2 col-form-label control-label asterisco">Categorías</label>
                             <div class="col-sm-7">
                                 <select class="form-control js-example-basic-single" name="Categorías" id="Categorías">
-                                   <option  value="{{old('Categorías',$medicamento->Categorías)}}">Seleccione solo para modificar</option>
+                                   <option >Seleccione solo para modificar</option>
                                     @foreach ( $categorias as $row )
-                                        @if ($row->estado==0)
-                                            @continue
-                                        @endif
-
-                                        <option @if ($row->id==$medicamento->Categorías)
-                                            selected="true"
-                                        @endif
-
-                                         value="{{$row->id}}">{{$row->nombre}}</option>
+                                        <option value="{{$row->id}}">{{$row->nombre}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('Categorías'))
@@ -55,13 +47,13 @@
 
                         </div>
                     </div>
-                    
+
         <div class="row">
             <label for="email" class="col-sm-2 col-form-label">Estado</label>
             <div class="col-sm-7">
                 <select class="form-control" name="estado" id="estado">
 
-                        @if($producto->estado==1)
+                        @if($medicamento->estado==1)
 
 
                     <option value="1">Activo</option>
@@ -83,7 +75,7 @@
     <div class="card-footer ml-auto mr-auto col-md-4">
         <button type="submit" class="btn btn-facebook">Actualizar</button>
         <div class="">
-        <a href="{{route('productos.index')}}" class="btn btn-danger">Cancelar</a>
+        <a href="{{route('medicamentos.index')}}" class="btn btn-danger">Cancelar</a>
     </div>
     </div>
 
