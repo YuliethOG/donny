@@ -50,10 +50,11 @@
                    
             
     </div>
-    <div class="card-footer ml-auto mr-auto col-md-3">
+    <div class=" ml-auto mr-auto col-md-3">
         <button type="submit" class="btn btn-primary">Enviar</button>
             <a href="{{route('medicamentos.index')}}" class="btn btn-danger">Cancelar</a>
     </div>
+    <br>
                     </div>
                 </form>
             </div>

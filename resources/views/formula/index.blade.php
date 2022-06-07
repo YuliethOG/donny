@@ -1,5 +1,7 @@
 @extends('adminlte::page')
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 @section('content')
 <br>
 <div class="is-size-4 content">
@@ -9,24 +11,28 @@
                 <div >
                     <div >
                         <div >
-                            <div >
-                                <h4 class="is-size-3"><strong>formula</strong></h4>
+                            <div class="card-header " style="background-color:rgb(50, 173, 211);">
+                                <h4 class="" style="font-weight: 900; font-size:24px">Formula</h4>
+                            <p class="" style="font-size:17px">Formulas registradas </p>
 
                             </div>
+                            <br>
                             <div >
                                 @if (session('success'))
-                               <div id="mensaj" class="notification is-success" role="success">
-                                    {{ session('success') }}
-                                </div>
-                                @endif
+                                <div id="mensaj" class="alert alert-success" role="success">
+                                     {{ session('success') }}
+                                 </div>
+                                 @endif
+                                <br>
                                 <div class="has-text-right">
                                     <div >
-                                        <a href="{{route('formula_detalle.create')}}" class="button is-link is-rounded">Agregar Formula</a>
+                                        <a href="{{route('formula_detalle.create')}}" class="btn btn-primary">Agregar Formula</a>
                                     </div>
                                 </div>
                                 <br>
-                                <div >
-                                    <table  id="compras" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="width:100%">
+                                <br>
+                                <div class="table-responsive">
+                                    <table   class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
                                         <thead>
                                             <th>No.</th>
                                             <th>Documento</th>
@@ -49,14 +55,14 @@
 
 
 
-                                               <td>
-                                                 <a  href="{{route('formula.show', $formula->id)}}" type="button" class="button is-info is-outlined"><strong>Ver</strong></a>
+                                               <td class="td-actions text-right">
+                                                 <a  href="{{route('formula.show', $formula->id)}}" type="button" class="btn btn-warning"><i class="bi bi-eye-fill"></i></a>
 
                                                     <form action="{{route('formula.destroy', $formula->id)}}" method="post" style="display: inline-block;" onsubmit="return confirm('¿Está seguro de eliminar la formula?')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="button is-danger is-outlined" type="submit" rel="tooltip">
-                                                            <i>Eliminar</i>
+                                                        <button class="btn btn-danger" type="submit" rel="tooltip">
+                                                            <i class="bi bi-trash-fill"></i>
                                                         </button>
                                                     </form>
                                                </td>

@@ -25,9 +25,9 @@ class FormulaCreateRequest extends FormRequest
     {
         return [
             'paciente' => 'required',
-            'cantidad' => 'nullable',
-            'medicamento' => 'nullable',
-            'hora'=> 'nullable',
+            // 'cantidad' => 'nullable',
+            // 'medicamento' => 'nullable',
+            // 'hora'=> 'nullable',
            
         ];
     }

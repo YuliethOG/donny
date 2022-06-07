@@ -1,90 +1,100 @@
 @extends('adminlte::page')
 
 @section('content')
-
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-12">
-                    <br>
+<br>
+<br>
+<br>
+<br>
+<div class="is-size-4 content">
+    <div class=" container is-fluid column is-three-quarters">
+        <div >
+            <div class="has-background-success-light">
                 <form action="{{route('formula.store')}}" method="post" class="form-horizontal">
                     @csrf
-                        <div class="card-header " style="background-color:rgb(50, 173, 211);">
-                            <h4 class="" style="font-weight: 900; font-size:24px">Formula</h4>
-                            <p class="" style="font-size:17px">Crear Formula </p>
+                    <div >
+                        <div >
+                            <h4 class="is-size-2 "><strong>Formula</strong></h4>
                         </div>
-                        <br>
-                        <div class="row">
-                            <label for="Categorias" class="col-sm-2 col-form-label control-label asterisco">Paciente</label>
-                            <div class="col-sm-4">
-                                <select class="form-control js-example-basic-single" name="Categorias" id="Categorias">
-                                    <option value="">Seleccione un paciente</option>
-                                    @foreach ( $paciente as $row )
-                                    <option value="{{$row->id}}">{{$row->nombre}}</option>
-                                    @endforeach
-                                </select>
-                                @if ($errors->has('Categorias'))
-                                <span class="error text-danger" for="input-Categorias">{{ $errors->first('Categorias') }}</span>
-                                @endif
+                            <div class="field">
+                                <div class="has-text-right">
+                                 <label for="paciente"  class="is-size-3">Pacientes: </label>
+                                     <div class="form-control field select is-rounded">
+                                        <select  name="paciente" id="paciente"  >
+                                            <option value="">Seleccione el paciente</option>
+                                            @foreach ( $paciente as $row )
+                                            <option value="{{$row->id}}">{{$row->nombre}} {{$row->apellido}}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('paciente'))
+                                        <span class="has-text-danger" for=" input-paciente">{{ $errors->first('paciente') }}</span>
+                                        @endif
+                                     </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="field is-horizontal">
-                            <label for="cantidad" class=" is-size-3">Cantidad:</label>
-                            <div class=" field-body">
-                                <input type="number" class="column is-one-quarter input is-info mx-4 mt-2" id="cantidad" name="cantidad" placeholder="Ingrese su cantidad" >
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="medicamento" class="is-size-3">Medicamentos:</label>
-                            <div class="select is-rounded">
-                                <select   name="medicamento" id="medicamento">
-                                    <option value="">Seleccione el medicamento</option>
-                                        @foreach ( $medicamentos as $row )
-                                    <option value="{{$row->id}}">{{$row->Nombre}}</option>
-                                        @endforeach
-                                </select>
+                                <div class="field is-horizontal">
+                                        <label for="cantidad" class=" is-size-3">Cantidad:</label>
+                                        <div class=" field-body">
+                                        <input type="number" class="column is-one-quarter input is-info mx-4 mt-2" id="cantidad" name="cantidad" placeholder="Ingrese su cantidad" >
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="medicamento" class="is-size-3">Medicamentos:</label>
+                                    <div class="select is-rounded">
+                                        <select   name="medicamento" id="medicamento">
+                                            <option value="">Seleccione el medicamento</option>
+                                            @foreach ( $medicamentos as $row )
+                                            <option value="{{$row->id}}">{{$row->Nombre}}</option>
+                                            @endforeach
+                                        </select>
 
-                            </div>
-                        </div>
-                        <div class="field is-horizontal">
-                            <label for="hora" class="is-size-3">Hora:</label>
-                            <div class="field-body mx-4 mt-2">
-                                <input type="text" class="column is-one-quarter input is-info" id="hora" name="hora" placeholder="Ingrese su precio" >
-                            </div>
-                        </div>
-                        <div>
-                            <button onClick="agregar()" type="button" >Agregar Producto</button>
-                        </div>
-                    </div>
-                    <br>  
-                    <div>
-                        <table   class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="width:100%">
-                            <thead >
-                                <tr>
-                                    <th>medicamento</th>
-                                    <th>Cantidad</th>
-                                    <th>hora</th>
-                                    <th>Funciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tmedicamentos">
+                                </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                        <label for="hora" class="is-size-3">Hora:</label>
+                                        <div class="field-body mx-4 mt-2">
+                                        <input type="text" class="column is-one-quarter input is-info" id="hora" name="hora" placeholder="Ingrese su precio" >
 
-                            </tbody>
-                        </table>
-                    </div>
-                        <br>
-                        </div>
-                    <div class="">
-                        <button type="submit" class="button is-link">Enviar</button>
-                        <a href="{{route('formula.index')}}" class="button is-danger">Cancelar</a>
+
+                                    </div>
+                                 </div>
+                                    <div>
+                                        <button onClick="agregar()" type="button" >Agregar Producto</button>
+
+                                    </div>
+                            </div>
+                          <br>
+
+
+    <div >
+        <table   class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="width:100%">
+            <thead >
+            <tr>
+                <th>medicamento</th>
+                <th>Cantidad</th>
+                <th>hora</th>
+                <th>Funciones</th>
+
+            </tr>
+                </thead>
+                <tbody id="tmedicamentos">
+
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="">
+            <button type="submit" class="button is-link">Enviar</button>
+
+                <a href="{{route('formula.index')}}" class="button is-danger">Cancelar</a>
+            </div>
+        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
 @section('js')
 <script>

@@ -23,7 +23,7 @@ class FormulaController extends Controller
     public function store(FormulaCreateRequest $request)
     {
         $input = $request->all();
-        // return response()->json($input);
+        // return response()->json($request);
         $formula = Formulas::create([
             "paciente"=>$input["paciente"],
         ]);

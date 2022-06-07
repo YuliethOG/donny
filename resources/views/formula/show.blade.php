@@ -2,34 +2,30 @@
 
 @section('content')
 <br>
-<div class="is-size-4 content">
-    <div class="container is-fluid column is-three-quarters">
-        <div class="">
-        <div class="has-background-success-light">
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <div class="">
-                            <h4 class="is-size-2 "><strong>Formula Detalle</strong></h4>
-
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br>
+                    <div class="card">
+                        <div class="card-header " style="background-color:rgb(50, 173, 211);">
+                            <h4 class="" style="font-weight: 900; font-size:24px">Formula</h4>
+                            <p class="" style="font-size:17px">ver detalle Formula </p>
                         </div>
-                        <div class="">
-
-                            @foreach ( $formulas as $formula )
-                            <div class="field is-horizontal">
-
-                                    <label for="paciente"  class="is-size-3">Pacientes:</label>
-                                    <div class="form-control field-body">
-                                        <input type="text" class="column is-one-quarter input is-info mx-4 mt-2" value="{{$formula->nombre}} {{$formula->apellido}}" disabled>
-                                        @if ($errors->has('paciente'))
-                                        <span class="error text-danger" for=" input-paciente">{{ $errors->first('paciente') }}</span>
-                                        @endif
+                        <div class="card-body">
+                            <div class="row">
+                                @foreach ( $formulas as $formula )
+                                <label for="Categorias" class="col-sm-1 col-form-label control-label asterisco">Paciente: </label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control"  value="{{$formula->nombre}} {{$formula->apellido}}" disabled>
                                 </div>
                                 @endforeach
                             </div>
                             <br>
-                            <div class="">
-                                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="width:100%">
+                            <div class="table-responsive">
+                                <table   class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
                                     <thead >
                                         <th>Medicamento</th>
                                         <th>Cantidad</th>
@@ -42,16 +38,14 @@
                                             <td>{{ $row->Nombre}}</td>
                                             <td>{{ $row->cantidad_c}}</td>
                                             <td>{{ $row->horas}}</td>
-
+                                            @endforeach
                                         </tr>
-                                     @endforeach
+                                   
 
                                     </tbody>
                                 </table>
-                                <div class="">
-                                    <div class="has-text-centered">
-                                        <a href="{{route('formula.index')}}" class="button is-link button is-medium">Regresar</a>
-                                    </div>
+                                <div class=" ml-auto mr-auto col-md-1">
+                                        <a href="{{route('formula.index')}}" class="btn btn-primary">Regresar</a>
                                 </div>
 
                             </div>
