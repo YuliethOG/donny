@@ -6,10 +6,11 @@
             <div class="col-md-12">
                 <form action= "{{route('medicamentos.store')}}" method="post" class="form-horizontal">
                     @csrf
+                    <br>
                     <div class="card">
-                        <div class="card-header card-header-info">
-                            <h4 class="card-title text-dark" style="font-weight: 900; font-size:24px">Medicamentos</h4>
-                            <p class="card-category text-dark" style="font-size:17px">Ingresar datos</p>
+                        <div class="card-header " style="background-color:rgb(50, 173, 211);">
+                            <h4 class="" style="font-weight: 900; font-size:24px">Crear Medicamentos</h4>
+                            <p class="" style="font-size:17px">Crear Medicamentos </p>
                         </div>
                            <div class="card-body">
                                
@@ -50,8 +51,7 @@
             
     </div>
     <div class="card-footer ml-auto mr-auto col-md-3">
-        <button type="submit" class="btn btn-facebook">Enviar</button>
-      
+        <button type="submit" class="btn btn-primary">Enviar</button>
             <a href="{{route('medicamentos.index')}}" class="btn btn-danger">Cancelar</a>
     </div>
                     </div>

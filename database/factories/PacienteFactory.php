@@ -16,7 +16,7 @@ class PacienteFactory extends Factory
     public function definition()
     {
         return [
-            'documento' => $this->faker->unique()->randomNumber(1,10),
+            'documento' => $this->faker->unique()->numberBetween(100000000,9999999999),
             'nombre' => $this->faker->firstname(),
             'apellido' => $this->faker->lastname(),
             'telefono' =>  $this->faker->phoneNumber(),

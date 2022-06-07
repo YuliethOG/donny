@@ -14,10 +14,12 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-info">
-                                <h4 class="card-title text-dark" style="font-weight: 900; font-size:24px">Medicamentos</h4>
-                                <p class="card-category text-dark" style="font-size:17px">Medicamentos Registrados</p>
+                        <br>
+                        <div class="card ">
+                            <br>
+                            <div class="card-header " style="background-color:rgb(50, 173, 211);">
+                                <h4 class="" style="font-weight: 900; font-size:24px">Medicamentos</h4>
+                                <p class="" style="font-size:17px">Medicamentos Registrados</p>
                             </div>
                             <div class="card-body">
                                 @if (session('success'))
@@ -58,14 +60,11 @@
 								                <td>{{ $Medicamento->nombrecat}}</td>
 
 
-                                                <td class="td-actions text-right">
 
-
-                                               </td>
                                                <td class="td-actions text-right">
 
                                                  <a href="{{ route('medicamentos.edit', $Medicamento->id) }}"
-                                                    class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                    class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
 
                                                </td>
 

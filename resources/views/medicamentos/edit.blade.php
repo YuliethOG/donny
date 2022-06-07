@@ -7,11 +7,12 @@
                 <form action="{{route('medicamentos.update', $medicamento->id)}}" method="post" class="form-horizontal">
                     @csrf
                     @method('PUT')
+                    <br>
                     <div class="card">
-                        <div class="card-header card-header-info">
-                            <h4 class="card-title text-dark" style="font-weight: 900; font-size:24px">Productos</h4>
-                            <p class="card-category text-dark" style="font-size:17px">Editar datos</p>
-                        </div>
+                        <div class="card-header " style="background-color:rgb(50, 173, 211);">
+                                <h4 class="" style="font-weight: 900; font-size:24px">Medicamentos</h4>
+                                <p class="" style="font-size:17px">Editar Medicamentos </p>
+                            </div>
                             <div class="card-body">
                                 {{-- <div class="row">
                                 <label for="Código" class="col-sm-2 col-form-label control-label asterisco">Código</label>
@@ -50,16 +51,10 @@
                     </div>
 
         <div class="row">
-
-
-
     <div class="card-footer ml-auto mr-auto col-md-4">
-        <button type="submit" class="btn btn-facebook">Actualizar</button>
-        <div class="">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
         <a href="{{route('medicamentos.index')}}" class="btn btn-danger">Cancelar</a>
     </div>
-    </div>
-
 
                     </div>
                 </form>
