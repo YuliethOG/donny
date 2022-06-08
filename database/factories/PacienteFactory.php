@@ -21,7 +21,7 @@ class PacienteFactory extends Factory
             'apellido' => $this->faker->lastname(),
             'telefono' =>  $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
-   
+        
         ];
     }
 }

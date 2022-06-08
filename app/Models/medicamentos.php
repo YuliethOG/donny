@@ -12,7 +12,6 @@ class medicamentos extends Model
     
     'Nombre',
     'Categorias',
-
     ];
 
     use HasFactory;

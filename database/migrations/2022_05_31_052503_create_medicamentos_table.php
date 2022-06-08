@@ -18,8 +18,6 @@ return new class extends Migration
             
             $table->string('Nombre');
             $table->bigInteger('Categorias')->unsigned();
-            $table->boolean('estado')->nullable()->default(1);
-
             $table->timestamps();
 
             $table->foreign('Categorias')->references('id')->on('categorias')->onDelete("cascade");

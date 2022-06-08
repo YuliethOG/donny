@@ -16,7 +16,9 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         $data=[
-            'nombre'=> 'Antiflamatorio'
+            ['nombre'=> 'Antialergicos' ],
+            ['nombre'=> 'Analgésticos'      ],
+            ['nombre'=> 'Antiinflamatorios'    ],
         ];
         DB::table('categorias')->insert($data);
     }

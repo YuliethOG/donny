@@ -37,11 +37,9 @@
                             <label for="Categorías" class="col-sm-2 col-form-label control-label asterisco">Categorías:</label>
                             <div class="col-sm-7">
                                 <select class="form-control js-example-basic-single" name="Categorías" id="Categorías">
-                                   <option >Seleccione solo para modificar</option>
+                                   <option value="{{old('Categorías',$medicamento->Categorias)}}" >Seleccione solo para modificar</option>
                                     @foreach ( $categorias as $row )
-                                        <option @if ($row->id==$medicamento->estado)
-                                            selected="true"
-                                        @endif
+                                        <option
                                         value="{{$row->id}}">{{$row->nombre}}</option>
                                     @endforeach
                                 </select>

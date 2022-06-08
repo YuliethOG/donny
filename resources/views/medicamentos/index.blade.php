@@ -46,6 +46,7 @@
                                             <th>Código</th>
                                             <th>Nombre</th>
                                             <th>Categorías</th>
+                                       
 
 
                                             <th class="text-right">Funciones</th>
@@ -58,6 +59,7 @@
                                                 <td>{{ $Medicamento->id}}</td>
                                                 <td>{{ $Medicamento->Nombre }}</td>
 								                <td>{{ $Medicamento->nombrecat}}</td>
+                                          
 
 
 
