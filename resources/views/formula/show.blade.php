@@ -26,21 +26,22 @@
                             <br>
                             <div class="table-responsive">
                                 <table   class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
-                                    <thead >
+                                    <thead style="background-color: rgb(125, 125, 128)">
                                         <th>Medicamento</th>
                                         <th>Cantidad</th>
                                         <th>Cada/Hora</th>
 
                                     </thead>
                                     <tbody>
+                                        @foreach ($medicamentos as $row)
                                         <tr>
-                                            @foreach ($medicamentos as $row)
+
                                             <td>{{ $row->Nombre}}</td>
                                             <td>{{ $row->cantidad_c}}</td>
                                             <td>{{ $row->horas}}</td>
-                                            @endforeach
+
                                         </tr>
-                                   
+                                        @endforeach
 
                                     </tbody>
                                 </table>

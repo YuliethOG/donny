@@ -36,12 +36,12 @@
                                     </form>
                                     </div>
                                     <div class="">
-                                        <a href="{{route('medicamentos.create')}}" class="btn btn-sm btn-danger">Agregar productos</a>
+                                        <a href="{{route('medicamentos.create')}}" class="btn btn-sm btn-primary">Agregar medicamento</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table  id="medicamentos" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
-                                        <thead class="text-black" id="fondo">
+                                        <thead class="text-black" style="background-color: rgb(125, 125, 128)">
 
                                             <th>Código</th>
                                             <th>Nombre</th>

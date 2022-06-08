@@ -52,7 +52,7 @@ public function show(Request $request, $id){
         ->where("formula_detalles.formula_id", $id)
         ->get();
         return view('formula.show', compact('medicamentos','formulas'));
-     
+
     }
 
 

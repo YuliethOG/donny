@@ -33,7 +33,7 @@
                                 <br>
                                 <div class="table-responsive">
                                     <table   class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
-                                        <thead>
+                                        <thead style="background-color: rgb(125, 125, 128)">
                                             <th>No.</th>
                                             <th>Documento</th>
                                             <th>Pacientes</th>

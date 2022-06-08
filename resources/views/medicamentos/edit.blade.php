@@ -24,7 +24,7 @@
                                 </div>
                             </div> --}}
                             <div class="row">
-                                <label for="Nombre" class="col-sm-2 col-form-label control-label asterisco">Nombre</label>
+                                <label for="Nombre" class="col-sm-2 col-form-label control-label asterisco">Nombre:</label>
                                 <div class="col-sm-7">
                                 <input type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" value="{{old('Nombre',$medicamento-> Nombre)}}">
                                 @if ($errors->has('Nombre'))
@@ -32,8 +32,9 @@
                                 @endif
                             </div>
                         </div>
+                        <br>
                         <div class="row">
-                            <label for="Categorías" class="col-sm-2 col-form-label control-label asterisco">Categorías</label>
+                            <label for="Categorías" class="col-sm-2 col-form-label control-label asterisco">Categorías:</label>
                             <div class="col-sm-7">
                                 <select class="form-control js-example-basic-single" name="Categorías" id="Categorías">
                                    <option >Seleccione solo para modificar</option>
@@ -49,9 +50,9 @@
                                 @endif
                         </div>
                     </div>
-
+                    <br>
         <div class="row">
-    <div class="card-footer ml-auto mr-auto col-md-4">
+    <div class="ml-auto mr-auto col-md-4">
         <button type="submit" class="btn btn-primary">Actualizar</button>
         <a href="{{route('medicamentos.index')}}" class="btn btn-danger">Cancelar</a>
     </div>

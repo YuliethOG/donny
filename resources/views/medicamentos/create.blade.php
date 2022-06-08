@@ -13,7 +13,7 @@
                             <p class="" style="font-size:17px">Crear Medicamentos </p>
                         </div>
                            <div class="card-body">
-                               
+
                                 {{-- <div class="row">
                                     <label for="Código" class="col-sm-2 col-form-label control-label asterisco">Código</label>
                                     <div class="col-sm-7">
@@ -24,7 +24,7 @@
                                 </div>
                             </div> --}}
                             <div class="row">
-                                <label for="Nombre" class="col-sm-2 col-form-label control-label asterisco">Nombre</label>
+                                <label for="Nombre" class="col-sm-2 col-form-label control-label asterisco">Nombre:</label>
                                 <div class="col-sm-7">
                                 <input type="text" class="form-control" name="Nombre" placeholder="Ingrese su Nombre" value="{{old('Nombre')}}">
                                 @if ($errors->has('Nombre'))
@@ -32,8 +32,9 @@
                                 @endif
                             </div>
                         </div>
+                        <br>
                         <div class="row">
-                            <label for="Categorias" class="col-sm-2 col-form-label control-label asterisco">Categorías</label>
+                            <label for="Categorias" class="col-sm-2 col-form-label control-label asterisco">Categorías:</label>
                             <div class="col-sm-7">
                                 <select class="form-control js-example-basic-single" name="Categorias" id="Categorias">
                                     <option value="">Seleccione la categoría</option>
@@ -47,8 +48,8 @@
                                 @endif
                         </div>
                     </div>
-                   
-            
+
+
     </div>
     <div class=" ml-auto mr-auto col-md-3">
         <button type="submit" class="btn btn-primary">Enviar</button>
